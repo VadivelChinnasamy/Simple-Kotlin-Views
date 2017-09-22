@@ -10,7 +10,11 @@ import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
-
+/***
+ * @Author: Vadivel
+ * @Desc:Simple usage of textview and button properties used in programmatically
+ *
+ * */
 class MainActivity : AppCompatActivity() {
 
 
@@ -18,13 +22,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         /*****************TEXTVIEW************************/
         textview.text = "Kotlin textview example"
         textview.setTextColor(Color.RED)
         textview.maxLines = 10
 
+        /*********************TEXTVIEW*ONCLICK*******************/
         textview.setOnClickListener {
-            Toast.makeText(this, "=>" + start(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "" + start(), Toast.LENGTH_LONG).show()
 
         }
         /*********************BUTTON********************/
@@ -47,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    /***********************FUCNTION CALLING*****************************/
+    /***********************FUNCTION CALLING*****************************/
     fun setValues() { this.textview.text = "Welcome to Kotlin" }
 
     fun start(): String = "HelloWorld!!!"
