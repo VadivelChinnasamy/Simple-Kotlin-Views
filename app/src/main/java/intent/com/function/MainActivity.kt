@@ -1,5 +1,6 @@
 package intent.com.function
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -12,8 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 /***
- * @Author: Vadivel
- * @Desc:Simple usage of textview and button properties used in programmatically
+ *  * @Desc:Simple usage of textview and button properties used in programmatically
  *
  * */
 class MainActivity : AppCompatActivity() {
@@ -25,32 +25,44 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         /*****************TEXTVIEW************************/
+      //  val textView: TextView = findViewById(R.id.text) // Declaration
+        /*****************OR************************/
         textview.text = "Kotlin textview example"
         textview.setTextColor(Color.RED)
         textview.maxLines = 10
 
-        /*********************TEXTVIEW*ONCLICK*******************/
         textview.setOnClickListener {
             Toast.makeText(this, "" + start(), Toast.LENGTH_LONG).show()
 
         }
-        /*********************BUTTON********************/
+
 
 
         /*********************BUTTON*ONCLICK*******************/
-        button.setOnClickListener {
+        btn.setOnClickListener {
             view: View? ->
             if (view != null) {
-                var x = view.id
-                button.text = "Button Clicked "
+               // var x = view.id
+                btn.text = "Button Clicked "
                 Toast.makeText(this, "OnClick", Toast.LENGTH_LONG).show()
-                button.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+                btn.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
 
             }
             setValues()
 
         }
         /************************************************/
+
+        btn_click.setOnClickListener {
+
+
+           var intent= Intent(this,SecondActivity::class.java)
+            intent.putExtra("msg",  getString(R.string.kotlin_feature))
+            startActivity(intent)
+
+
+
+        }
 
 
     }
