@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 /***
  * @Author: Vadivel
  * @Desc:Simple usage of textview and button properties used in programmatically
@@ -34,16 +35,17 @@ class MainActivity : AppCompatActivity() {
 
         }
         /*********************BUTTON********************/
-        button.text = "Button On Click"
-        button.setBackgroundColor(Color.CYAN);
-        button.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+
 
         /*********************BUTTON*ONCLICK*******************/
         button.setOnClickListener {
             view: View? ->
             if (view != null) {
                 var x = view.id
-                Toast.makeText(this, "Onclick" + x, Toast.LENGTH_LONG).show()
+                button.text = "Button Clicked "
+                Toast.makeText(this, "OnClick", Toast.LENGTH_LONG).show()
+                button.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+
             }
             setValues()
 
@@ -54,7 +56,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     /***********************FUNCTION CALLING*****************************/
-    fun setValues() { this.textview.text = "Welcome to Kotlin" }
+    fun setValues() {
+        this.textview.text = "Welcome to Kotlin"
+    }
 
     fun start(): String = "HelloWorld!!!"
 
