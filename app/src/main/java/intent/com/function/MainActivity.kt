@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 /***
- *  * @Desc:Simple usage of textview and button properties used in programmatically
+ *  * @Desc:Simple usage of intent, textview and button
  *
  * */
 class MainActivity : AppCompatActivity() {
@@ -25,8 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         /*****************TEXTVIEW************************/
-      //  val textView: TextView = findViewById(R.id.text) // Declaration
-        /*****************OR************************/
+        //  val textView: TextView = findViewById(R.id.text) // Declaration
         textview.text = "Kotlin textview example"
         textview.setTextColor(Color.RED)
         textview.maxLines = 10
@@ -36,13 +35,11 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-
-
         /*********************BUTTON*ONCLICK*******************/
         btn.setOnClickListener {
             view: View? ->
             if (view != null) {
-               // var x = view.id
+                // var x = view.id
                 btn.text = "Button Clicked "
                 Toast.makeText(this, "OnClick", Toast.LENGTH_LONG).show()
                 btn.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
@@ -51,16 +48,13 @@ class MainActivity : AppCompatActivity() {
             setValues()
 
         }
-        /************************************************/
+        /******************INTENT WITH PASS VALUES******************************/
 
         btn_click.setOnClickListener {
 
-
-           var intent= Intent(this,SecondActivity::class.java)
-            intent.putExtra("msg",  getString(R.string.kotlin_feature))
+            var intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("msg", getString(R.string.kotlin_feature))
             startActivity(intent)
-
-
 
         }
 
