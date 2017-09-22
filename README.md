@@ -1,2 +1,2 @@
-# Textview-Button---Kotlin
-Simple usage of textview and button properties used in programmatically
+# Intent, Textview, Button Kotlin
+Simple usage of Intent, textview and button properties used in programmatically
